@@ -1,4 +1,4 @@
-import { AdjustmentsHorizontalIcon, ArrowTrendingUpIcon, BoltIcon, CursorArrowRaysIcon, PencilIcon, UserGroupIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { AdjustmentsHorizontalIcon, ArrowTrendingUpIcon, BoltIcon, CursorArrowRaysIcon, PencilIcon, UserGroupIcon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import NavigationLink from "./NavigationLink";
 
@@ -59,6 +59,23 @@ const ProjectNavigation = (
         <NavigationLink name="Project Settings">
           <AdjustmentsHorizontalIcon className="w-8 stroke-inherit stroke-[0.75] min-w-8" />
         </NavigationLink>
+      </div>
+      <div className="flex flex-col gap-5">
+        <h1 className="tracking-wide text-neutral-300">Team Members</h1>
+        <a href="#" className="flex flex-row gap-3 place-items-center">
+          <UserIcon className="w-8 p-1 rounded-full stroke-2 stroke-rose-800 bg-rose-200/70" />
+          <p className="tracking-wide text-neutral-400">Steve Jobs</p>
+        </a>
+        <h1 className="tracking-wide text-neutral-300">Team Members</h1>
+        <a href="#" className="flex flex-row gap-3 place-items-center">
+          <UserIcon className="w-8 p-1 rounded-full stroke-2 stroke-emerald-800 bg-emerald-200/70" />
+          <p className="tracking-wide text-neutral-400">Bill Gates</p>
+        </a>
+        <h1 className="tracking-wide text-neutral-300">Team Members</h1>
+        <a href="#" className="flex flex-row gap-3 place-items-center">
+          <UserIcon className="w-8 p-1 rounded-full stroke-2 stroke-rose-800 bg-rose-200/70" />
+          <p className="tracking-wide text-neutral-400">Steve Jobs</p>
+        </a>
       </div>
     </motion.nav>
   )
