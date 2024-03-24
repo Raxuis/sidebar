@@ -1,5 +1,7 @@
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
+import NavigationLink from "./NavigationLink";
+import { ChartPieIcon, ChartBarIcon, DocumentCheckIcon, Square2StackIcon, UsersIcon } from "@heroicons/react/24/outline";
 
 const containerVariants = {
   close: {
@@ -63,6 +65,23 @@ const Navigation = () => {
             }} strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
           </svg>
         </button>
+      </div>
+      <div className="flex flex-col gap-3">
+        <NavigationLink name="Dashboard">
+          <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        </NavigationLink>
+        <NavigationLink name="Projects">
+          <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        </NavigationLink>
+        <NavigationLink name="Tasks">
+          <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        </NavigationLink>
+        <NavigationLink name="Reporting">
+          <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        </NavigationLink>
+        <NavigationLink name="Users">
+          <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        </NavigationLink>
       </div>
     </motion.nav>
   )
