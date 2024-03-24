@@ -2,6 +2,7 @@ import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavigationLink from "./NavigationLink";
 import { ChartPieIcon, ChartBarIcon, DocumentCheckIcon, Square2StackIcon, UsersIcon } from "@heroicons/react/24/outline";
+import ProjectLink from "./ProjectLink";
 
 const containerVariants = {
   close: {
@@ -33,6 +34,7 @@ const svgVariants = {
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const containerControls = useAnimationControls();
   const svgControls = useAnimationControls();
@@ -82,6 +84,20 @@ const Navigation = () => {
         <NavigationLink name="Users">
           <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
         </NavigationLink>
+      </div>
+      <div className="flex flex-col gap-3">
+        <ProjectLink name="Virtual Reality" setSelectedProject={setSelectedProject}>
+          <div className="min-w-4 mx-2 border-pink-600 border rounded-full aspect-square bg-pink-700" />
+        </ProjectLink>
+        <ProjectLink name="Apple Vision Pro" setSelectedProject={setSelectedProject}>
+          <div className="min-w-4 mx-2 border-indigo-600 border rounded-full aspect-square bg-indigo-700" />
+        </ProjectLink>
+        <ProjectLink name="Porsche" setSelectedProject={setSelectedProject}>
+          <div className="min-w-4 mx-2 border-cyan-600 border rounded-full aspect-square bg-cyan-700" />
+        </ProjectLink>
+        <ProjectLink name="Secret Project" setSelectedProject={setSelectedProject}>
+          <div className="min-w-4 mx-2 border-yellow-600 border rounded-full aspect-square bg-yellow-700" />
+        </ProjectLink>
       </div>
     </motion.nav>
   )
