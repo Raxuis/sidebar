@@ -6,7 +6,6 @@ const containerVariants = {
     width: "5rem",
     transition: {
       type: "spring",
-      // stiffness: 100,
       damping: 15,
       duration: 0.5,
     },
@@ -15,22 +14,34 @@ const containerVariants = {
     width: "16rem",
     transition: {
       type: "spring",
-      // stiffness: 100,
       damping: 15,
       duration: 0.5,
     },
   }
 }
+
+const svgVariants = {
+  close: {
+    rotate: 360,
+  },
+  open: {
+    rotate: 180,
+  }
+}
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const containerControls = useAnimationControls();
+  const svgControls = useAnimationControls();
 
   useEffect(() => {
     if (isOpen) {
       containerControls.start("open");
+      svgControls.start("open");
     } else {
       containerControls.start("close");
+      svgControls.start("close");
     }
   }, [isOpen]);
 
@@ -46,7 +57,10 @@ const Navigation = () => {
           handleOpenClose();
         }}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8 stroke-neutral-200">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            <motion.path variants={svgVariants} animate={svgControls} transition={{
+              duration: 0.5,
+              ease: "easeInOut"
+            }} strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
           </svg>
         </button>
       </div>
