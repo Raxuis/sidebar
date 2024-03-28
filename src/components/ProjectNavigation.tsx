@@ -74,7 +74,7 @@ const ProjectNavigation = (
         <h1 className="tracking-wide text-neutral-300">Team Members</h1>
         <a href="#" className="flex flex-row gap-3 place-items-center">
           <UserIcon className="w-8 p-1 rounded-full stroke-2 stroke-rose-800 bg-rose-200/70" />
-          <p className="tracking-wide text-neutral-400">Steve Jobs</p>
+          <p className="tracking-wide text-neutral-400">Xavier Niel</p>
         </a>
       </div>
     </motion.nav>
